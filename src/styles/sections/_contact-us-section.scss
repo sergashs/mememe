@@ -1,0 +1,59 @@
+.contact-us-section {
+  .section-title {
+    margin-bottom: 16rem;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .inner-holder {
+    padding: 4rem;
+    background: white;
+
+    @include breakpoint(md, max) {
+      padding: 2rem;
+    }
+  }
+
+  .row-1 {
+    @include breakpoint(lg, min) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .contact-group {
+    @include breakpoint(lg, max) {
+      margin-bottom: 4rem;
+    }
+
+    @include breakpoint(md, max) {
+      margin-bottom: 2rem;
+    }
+
+    .group-title {
+      margin-bottom: 1rem;
+    }
+
+    .text-holder {
+      font-size: 1.5rem;
+      line-height: 1.3333;
+      color: $color-neutral-50;
+
+      @include breakpoint(md, max) {
+        font-size: 1.4rem;
+        line-height: 1.28;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:not(.underline-link) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

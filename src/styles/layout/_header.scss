@@ -1,0 +1,519 @@
+/* header */
+#header {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: white;
+  z-index: 100;
+
+  @include breakpoint(md, max) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-collapse {
+    @include breakpoint(lg, max) {
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+
+    @include breakpoint(md, max) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    > .btn {
+      @include breakpoint(lg, max) {
+        margin-left: auto;
+        margin-right: 2rem;
+      }
+
+      @include breakpoint(md, max) {
+        margin-right: 1.6rem;
+      }
+    }
+  }
+
+  .logo {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    max-width: 16.2rem;
+    z-index: 99;
+
+    @include breakpoint(md, max) {
+      max-width: 12.5rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .main-navigation {
+    @include breakpoint(lg, max) {
+      position: fixed;
+      top: 7.2rem;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 7.2rem);
+      padding-top: 2.1rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      background: #f2f1ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+    }
+
+    @include breakpoint(md, max) {
+      top: 6.3rem;
+      height: calc(100% - 6.3rem);
+    }
+
+    &.is-active {
+      @include breakpoint(lg, max) {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transition: $transition;
+      }
+    }
+
+    .inner-holder {
+      @include breakpoint(lg, min) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      @include breakpoint(lg, max) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        overflow: auto;
+        width: 100%;
+      }
+
+      @include breakpoint(md, max) {
+        padding-top: 0;
+      }
+    }
+
+    .navbar-nav {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: $color-neutral-40;
+
+      @include breakpoint(lg, min) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 3.7rem;
+      }
+
+      @include breakpoint(xl, min) {
+        margin-left: 6.7rem;
+      }
+
+      @include breakpoint(lg, max) {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2.8rem;
+      }
+
+      .nav-item {
+        @include breakpoint(lg, max) {
+          border-radius: 0.8rem;
+        }
+
+        &:not(:last-child) {
+          @include breakpoint(lg, min) {
+            margin-right: 0.8rem;
+          }
+        }
+
+        &.show {
+          @include breakpoint(lg, max) {
+            margin-bottom: 1rem;
+            background: white;
+          }
+        }
+      }
+
+      .dropdown {
+        &::before {
+          @include breakpoint(lg, min) {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+          }
+        }
+
+        &:hover {
+          > .dropdown-menu {
+            @include breakpoint(lg, min) {
+              position: absolute;
+              display: block;
+              inset: 0 auto auto 0;
+              margin: 0;
+              transform: translate(0, 3.9rem);
+            }
+          }
+
+          > .nav-link {
+            @include breakpoint(lg, min) {
+              color: $color-primary-50;
+              background: #e9e7f6;
+            }
+
+            &::after {
+              @include breakpoint(lg, min) {
+                background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 11.1387C7.71289 11.1387 7.47266 11.0332 7.23242 10.793L2.89648 6.35742C2.7207 6.17578 2.63281 5.96484 2.63281 5.71289C2.63281 5.19141 3.04883 4.76953 3.56445 4.76953C3.82227 4.76953 4.0625 4.875 4.25586 5.06836L8.00586 8.93555L11.75 5.06836C11.9434 4.875 12.1836 4.76953 12.4355 4.76953C12.9512 4.76953 13.3672 5.19141 13.3672 5.71289C13.3672 5.9707 13.2793 6.18164 13.1035 6.35742L8.76758 10.793C8.53906 11.0273 8.29297 11.1387 8 11.1387Z' fill='%234632DC'/%3E%3C/svg%3E%0A") no-repeat;
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
+          }
+        }
+
+        .dropdown {
+          &::before {
+            @include breakpoint(lg, min) {
+              top: 0;
+              left: 100%;
+              height: 100%;
+            }
+          }
+
+          .dropdown-toggle {
+            @include breakpoint(lg, max) {
+              margin-bottom: 0;
+              font-size: 1.6rem;
+            }
+
+            &::after {
+              opacity: 1;
+
+              @include breakpoint(lg, max) {
+                right: 1rem;
+              }
+
+              @include breakpoint(lg, min) {
+                transform: translateY(-50%) rotate(-90deg);
+              }
+            }
+
+            &:hover {
+              @include breakpoint(lg, max) {
+                background: transparent;
+              }
+            }
+          }
+
+          &:hover {
+            .dropdown-submenu {
+              @include breakpoint(lg, min) {
+                inset: unset !important;
+                top: -100% !important;
+                left: calc(100% + 0.5rem) !important;
+                margin-top: 0 !important;
+              }
+            }
+          }
+
+          .dropdown-submenu {
+            @include breakpoint(lg, max) {
+              padding: 0;
+              inset: unset !important;
+            }
+
+            .dropdown-item {
+              &::after {
+                @include breakpoint(lg, max) {
+                  right: 1.3rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .nav-link {
+        padding: 0.8rem 0.8rem 0.8rem 1.2rem;
+        border-radius: 0.8rem;
+
+        @include breakpoint(lg, max) {
+          padding: 1rem 1.6rem 0 1.6rem;
+          font-size: 1.8rem;
+          border-radius: 0.8rem 0.8rem 0 0;
+        }
+
+        @include breakpoint(md, max) {
+          padding: 0.8rem 1.6rem;
+        }
+
+        &:hover {
+          @include breakpoint(lg, min) {
+            color: $color-primary-50;
+          }
+        }
+
+        &.dropdown-toggle {
+          &.show {
+            @include breakpoint(lg, max) {
+              margin-bottom: 0;
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .dropdown-toggle {
+        position: relative;
+        padding-right: 2.6rem;
+
+        @include breakpoint(lg, max) {
+          margin-bottom: 0.5rem;
+        }
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          right: 0.8rem;
+          transform: translateY(-50%);
+          vertical-align: unset;
+          width: 1.4rem;
+          height: 1.4rem;
+          background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 11.1387C7.71289 11.1387 7.47266 11.0332 7.23242 10.793L2.89648 6.35742C2.7207 6.17578 2.63281 5.96484 2.63281 5.71289C2.63281 5.19141 3.04883 4.76953 3.56445 4.76953C3.82227 4.76953 4.0625 4.875 4.25586 5.06836L8.00586 8.93555L11.75 5.06836C11.9434 4.875 12.1836 4.76953 12.4355 4.76953C12.9512 4.76953 13.3672 5.19141 13.3672 5.71289C13.3672 5.9707 13.2793 6.18164 13.1035 6.35742L8.76758 10.793C8.53906 11.0273 8.29297 11.1387 8 11.1387Z' fill='%23797887'/%3E%3C/svg%3E%0A") no-repeat;
+          border: none;
+          transition: $transition;
+
+          @include breakpoint(lg, max) {
+            right: 1.6rem;
+          }
+        }
+
+        &:hover {
+          @include breakpoint(lg, min) {
+            color: $color-primary-50;
+            background: #e9e7f6;
+          }
+
+          &::after {
+            background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 11.1387C7.71289 11.1387 7.47266 11.0332 7.23242 10.793L2.89648 6.35742C2.7207 6.17578 2.63281 5.96484 2.63281 5.71289C2.63281 5.19141 3.04883 4.76953 3.56445 4.76953C3.82227 4.76953 4.0625 4.875 4.25586 5.06836L8.00586 8.93555L11.75 5.06836C11.9434 4.875 12.1836 4.76953 12.4355 4.76953C12.9512 4.76953 13.3672 5.19141 13.3672 5.71289C13.3672 5.9707 13.2793 6.18164 13.1035 6.35742L8.76758 10.793C8.53906 11.0273 8.29297 11.1387 8 11.1387Z' fill='%234632DC'/%3E%3C/svg%3E%0A") no-repeat;
+          }
+        }
+
+        &.show {
+          color: $color-primary-50;
+
+          @include breakpoint(lg, min) {
+            background: #e9e7f6;
+          }
+
+          &::after {
+            background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 11.1387C7.71289 11.1387 7.47266 11.0332 7.23242 10.793L2.89648 6.35742C2.7207 6.17578 2.63281 5.96484 2.63281 5.71289C2.63281 5.19141 3.04883 4.76953 3.56445 4.76953C3.82227 4.76953 4.0625 4.875 4.25586 5.06836L8.00586 8.93555L11.75 5.06836C11.9434 4.875 12.1836 4.76953 12.4355 4.76953C12.9512 4.76953 13.3672 5.19141 13.3672 5.71289C13.3672 5.9707 13.2793 6.18164 13.1035 6.35742L8.76758 10.793C8.53906 11.0273 8.29297 11.1387 8 11.1387Z' fill='%234632DC'/%3E%3C/svg%3E%0A") no-repeat;
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+      }
+    }
+
+    .btns-holder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding-top: 1.6rem;
+      padding-bottom: 1.6rem;
+      background: #eeedf7;
+      box-shadow: 0 0.6rem 1rem 0.2rem rgba(0, 0, 0, 0.16), 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+
+      .btn {
+        &:first-child {
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    .btn {
+      flex: 1;
+
+      @include breakpoint(lg, min) {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    border-radius: 0 0 0.8rem 0.8rem;
+    font-weight: 500;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1.6rem 0.8rem;
+    color: $color-neutral-10;
+
+    @include breakpoint(lg, min) {
+      margin-top: 1.6rem !important;
+      width: 28rem;
+      border-radius: 0.8rem;
+      background: #fff;
+      box-shadow: 0 0.6rem 1rem 0.2rem rgba(0, 0, 0, 0.16), 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+    }
+
+    @include breakpoint(lg, max) {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background: transparent;
+    }
+
+    @include breakpoint(md, max) {
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+
+    .dropdown-divider {
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+    }
+
+    .dropdown-item {
+      position: relative;
+      font-weight: inherit;
+      color: inherit;
+      border-radius: 0.4rem;
+      padding: 0.8rem 3rem 0.8rem 0.8rem;
+
+      @include breakpoint(md, max) {
+        padding: 0.6rem 3rem 0.8rem 0.8rem;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 0.8rem;
+        transform: translateY(-50%);
+        width: 1.4rem;
+        height: 1.4rem;
+        background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.7012 7.75195C13.7012 7.98047 13.6016 8.2207 13.4434 8.37891L9.62305 12.1875C9.44727 12.3633 9.23633 12.4512 9.03125 12.4512C8.5332 12.4512 8.19336 12.1055 8.19336 11.6484C8.19336 11.3965 8.30469 11.1914 8.46289 11.0391L9.77539 9.72656L11.0762 8.53125L9.79297 8.60156H3.17188C2.64453 8.60156 2.29297 8.25586 2.29297 7.75195C2.29297 7.24219 2.64453 6.90234 3.17188 6.90234H9.79297L11.0703 6.97266L9.77539 5.77734L8.46289 4.45898C8.30469 4.30664 8.19336 4.10742 8.19336 3.84961C8.19336 3.39258 8.5332 3.04688 9.03125 3.04688C9.23633 3.04688 9.44727 3.13477 9.62891 3.31641L13.4434 7.125C13.6016 7.2832 13.7012 7.52344 13.7012 7.75195Z' fill='%234632DC'/%3E%3C/svg%3E%0A") no-repeat;
+        opacity: 0;
+        transition: $transition;
+
+        @include breakpoint(lg, max) {
+          right: 1rem;
+        }
+      }
+
+      &:hover {
+        color: $color-primary-50;
+        background: #f2f1ff;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.show {
+      @include breakpoint(lg, max) {
+        position: relative !important;
+        transform: unset !important;
+      }
+    }
+  }
+
+  .open-menu {
+    position: relative;
+    width: 3.4rem;
+    height: 3.4rem;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    border-radius: 50%;
+
+    @include breakpoint(lg, min) {
+      display: none;
+    }
+
+    @include breakpoint(md, max) {
+      margin-right: 1.7rem;
+    }
+
+    .menu-opened & {
+      @include breakpoint(lg, max) {
+        background: #7a7a90;
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2rem;
+      background: #7a7a90;
+      border-radius: 0;
+      height: 0.2rem;
+      transition: $transition;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          @if ($i == 1) {
+            margin-top: -0.8rem;
+          }
+          @if ($i == 2) {
+            margin-top: -0.1rem;
+          }
+          @if ($i == 3) {
+            margin-top: 0.6rem;
+          }
+        }
+      }
+
+      .menu-opened & {
+        background: white;
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            @if ($i == 1) {
+              margin-top: 0;
+              transform: translateX(-50%) rotate(45deg);
+            }
+            @if ($i == 2) {
+              opacity: 0;
+              // transform: translateX(50%);
+            }
+            @if ($i == 3) {
+              margin-top: 0;
+              transform: translateX(-50%) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

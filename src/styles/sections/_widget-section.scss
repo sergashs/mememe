@@ -1,0 +1,24 @@
+.widget-section {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+
+	@include breakpoint(md, max) {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+
+	.section-title {
+		margin-bottom: 4rem;
+
+		@include breakpoint(md, max) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.img-holder {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}

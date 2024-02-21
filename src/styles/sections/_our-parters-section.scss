@@ -1,0 +1,53 @@
+.our-partners-section {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+
+  @include breakpoint(md, max) {
+    padding-top: 4rem;
+    padding-bottom: 0;
+  }
+
+  .companies-holder {
+    display: flex;
+    margin-right: -$grid-gutter-width;
+    margin-left: -$grid-gutter-width;
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+    overflow: auto;
+    padding-bottom: 4rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .companies-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 16.8rem;
+      min-height: 8rem;
+      background: white;
+      transition: $transition;
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      &:last-child {
+        margin-right: auto;
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+
+        @include breakpoint(md, max) {
+          margin-right: 0.8rem;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 1.2rem 4.2rem -0.4rem rgba(24, 39, 75, 0.12), 0 0.8rem 1.8rem -0.6rem rgba(24, 39, 75, 0.12);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.leaders-section {
+  .row {
+    margin-bottom: 4rem;
+
+    @include breakpoint(lg, max) {
+      margin-bottom: 2rem;
+    }
+
+    [class^="col"] {
+      @include breakpoint(sm, max) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .block {
+    overflow: hidden;
+
+    @include breakpoint(lg, max) {
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoint(sm, max) {
+      max-width: 26.2rem;
+    }
+
+    .img-holder {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .content-holder {
+      padding: 2rem 2rem 4rem 2rem;
+    }
+
+    .block-title {
+      margin-bottom: 0.4rem;
+    }
+
+    .text-holder {
+      margin-bottom: 0.3rem;
+      font-size: 1.5rem;
+      line-height: 1.333;
+    }
+
+    .soc-link {
+      font-size: 2.4rem;
+    }
+  }
+}

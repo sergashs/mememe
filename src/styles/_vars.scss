@@ -1,0 +1,95 @@
+// vars
+$images: "../images/";
+$fonts: "../fonts/";
+
+// fonts
+$main-font: "Inter", sans-serif;
+$secondary-font: "Noi Grotesk Fix";
+
+// breakpoints
+$breakpoints: (
+  sm: 575px,
+  md: 767px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+// color vars
+// primary
+$color-primary-05: #060417;
+$color-primary-10: #0c082e;
+$color-primary-15: #120c45;
+$color-primary-20: #19105c;
+$color-primary-30: #25188b;
+$color-primary-40: #311fb9;
+$color-primary-50: #4632dc;
+$color-primary-60: #6b5be3;
+$color-primary-70: #9084ea;
+$color-primary-80: #b5adf1;
+$color-primary-90: #dad6f8;
+$color-primary-95: #ecebfc;
+$color-primary-97: #f4f3fd;
+$color-primary-99: #fbfbfe;
+
+// neutral
+$color-neutral-05: #0c0c0e;
+$color-neutral-10: #18181b;
+$color-neutral-15: #242429;
+$color-neutral-20: #303036;
+$color-neutral-30: #494851;
+$color-neutral-40: #61606c;
+$color-neutral-50: #797887;
+$color-neutral-60: #94939f;
+$color-neutral-70: #afaeb7;
+$color-neutral-80: #c9c9cf;
+$color-neutral-90: #e4e4e7;
+$color-neutral-95: #f2f1f3;
+$color-neutral-97: #f7f7f8;
+$color-neutral-99: #fcfcfd;
+
+// secondary
+$color-secondary-05: #000f1f;
+$color-secondary-10: #001f3d;
+$color-secondary-15: #002e5c;
+$color-secondary-20: #003d7a;
+$color-secondary-30: #005cb8;
+$color-secondary-40: #007af5;
+$color-secondary-50: #3399ff;
+$color-secondary-60: #5cadff;
+$color-secondary-70: #85c2ff;
+$color-secondary-80: #add6ff;
+$color-secondary-90: #d6ebff;
+$color-secondary-95: #ebf5ff;
+$color-secondary-97: #f3f9ff;
+$color-secondary-99: #fbfdff;
+
+// base vars
+$text-color-base: $color-neutral-10;
+$body-bg: $color-neutral-97;
+$font-family-base: $main-font;
+$font-size-base: 1.7rem;
+$font-weight-base: 400;
+$line-height-base: 1.41;
+$links-color-base: inherit;
+$transition: all 0.3s ease;
+
+// bootstrap variables
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+$grid-gutter-width-mobile: $grid-gutter-width;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5
+);
+
+$primary: $color-primary-50;
+$secondary: $color-neutral-50;
+
+$gradient: linear-gradient(180deg, #dcdaf9 0%, rgba(243, 242, 249, 0) 100%);

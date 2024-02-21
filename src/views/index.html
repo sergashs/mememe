@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <title>QRBP</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+    </header>
+    <!-- / header -->
+    <main id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-auto">
+            <video autoplay="true" id="video" class="w-100 h-auto mb-1">
+            </video>
+            <input type="text" class="form-control mb-1" id="input-text" placeholder="text on photo">
+            <input type="color" class="form-control form-control-color mb-1 w-100" id="input-color" value="#563d7c" title="Choose your color">
+            <button class="btn btn-primary" id="startbutton">
+              take screen
+            </button>
+            <canvas id="canvas" class="d-none"></canvas>
+            <div class="output">
+              <img id="photo" alt="The screen capture will appear in this box." class="w-100 h-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+    </footer>
+  </div>
+</body>
+
+</html>
